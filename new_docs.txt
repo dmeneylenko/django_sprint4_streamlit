@@ -1,0 +1,54 @@
+# Команда для Windows:
+python -m venv venv
+# Команда для Linux и macOS:
+python3 -m venv venv
+
+# Команда для Windows:
+source venv/Scripts/activate
+# Для Linux и macOS:
+source venv/bin/activate
+
+# В Windows
+python manage.py runserver
+# В Linux/macOS.
+python3 manage.py runserver
+
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+pip install isort
+isort .
+
+python3 manage.py createsuperuser
+diman1234
+Qwerty12345
+
+Загрузка данных из фикстуры
+Активируйте виртуальное окружение, перейдите в каталог с manage.py и выполните команду
+ для загрузки фикстур в БД:
+python manage.py loaddata db.json
+
+Создание фикстур
+Выгружаем данные всех моделей из БД:
+python manage.py dumpdata -o db.json  
+Или только данные из приложения ice_cream:
+python manage.py dumpdata ice_cream -o ice_cream.json
+А можно сохранить только данные из отдельной таблицы:
+python manage.py dumpdata ice_cream.icecream -o ice_cream_icecream.json
+Есть возможность экспортировать все таблицы за исключением перечисленных:
+python manage.py dumpdata --exclude ice_cream.icecream -o without_ice_cream_icecream.json
+
+git add .
+git commit -m "min costom model users_1"
+git push
+
+pip install streamlit
+pip install streamlit plotly
+pip install streamlit-option-menu
+
+streamlit run app.py
+
+проект в облаке
+https://gitpod.io/#/https://github.com/dmeneylenko/helloworld
+
+pip install streamlit-elements==0.1.*
