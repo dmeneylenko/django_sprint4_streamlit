@@ -38,6 +38,18 @@ python manage.py dumpdata ice_cream.icecream -o ice_cream_icecream.json
 Есть возможность экспортировать все таблицы за исключением перечисленных:
 python manage.py dumpdata --exclude ice_cream.icecream -o without_ice_cream_icecream.json
 
+засады при создании фикстур
+проблемы с кодировкой решаются так
+python -Xutf8 manage.py dumpdata --indent 2 -o indented_db.json
+Если данные были экспортированы на одном компьютере, а залить базу надо на другом — возникнет 
+проблема: при импорте данных будет выброшено исключение IntegrityError
+решается так
+Чтобы избежать ошибки, при создании фикстуры нужно исключить таблицу contenttypes:
+python manage.py dumpdata --exclude contenttypes -o db.json
+Проблемы при импорте могут возникнуть и с таблицей auth.permission, которая хранит информацию
+ о правах пользователей. Эту таблицу тоже можно исключить из фикстур:
+ --exclude auth.permission
+
 git add .
 git commit -m "min costom model users_1"
 git push
