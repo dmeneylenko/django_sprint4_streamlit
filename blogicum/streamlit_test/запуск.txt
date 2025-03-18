@@ -1,0 +1,22 @@
+python -m venv venv
+source venv/Scripts/activate
+pip install streamlit
+pip install streamlit plotly
+
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+python manage.py runserver
+
+python manage.py makemigrations
+python manage.py migrate
+
+pip install isort
+isort .
+
+streamlit run streamlit_app.py
+
+проект в облаке
+https://gitpod.io/#/https://github.com/dmeneylenko/helloworld
+
+pip install streamlit-elements==0.1.*

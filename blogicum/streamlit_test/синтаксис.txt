@@ -1,0 +1,114 @@
+st.title('Theming with config.toml') Заголовк приложения
+
+st.write('Hello world!')   вывод текста, таблиц, графиков
+https://docs.streamlit.io/develop/api-reference/write-magic/st.write
+
+Для вывода так же используются
+st.markdown
+st.header('st.button')
+st.subheader
+st.caption
+st.text
+st.latex
+st.code
+
+Сворачивающийся блок
+with st.expander('About this app'):
+    st.write('This app shows the various ways on how you can layout your Streamlit app.')
+    st.image('https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png', width=250)
+
+
+st.button('Say hello') кнопка
+https://docs.streamlit.io/develop/api-reference/widgets/st.button
+
+st.slider позволяет отображать виджет ввода слайдера
+https://docs.streamlit.io/develop/api-reference/widgets/st.select_slider
+
+st.selectbox Селектбокс, можно менять на checkbox, radio
+https://docs.streamlit.io/develop/api-reference/widgets/st.selectbox
+
+st.multiselect Мультиселект
+https://docs.streamlit.io/develop/api-reference/widgets/st.multiselect
+
+st.checkbox Чекбокс
+https://docs.streamlit.io/develop/api-reference/widgets/st.checkbox
+
+
+Компоненты Streamlit
+Компоненты—это сторонние модули для Python, расширяющие возможности Streamlit
+Пример компонент streamlit_pandas_profiling
+pip install streamlit-pandas-profiling
+НЕ ПОЛУЧИЛОСЬ ЗАПУСТИТЬ. НУЖНО РАЗОБРАТЬСЯ
+
+st.latex отображает математические выражения в формате LaTeX.
+https://docs.streamlit.io/develop/api-reference/text/st.latex
+
+Настройка темы приложений Streamlit
+Простое приложение, которое показывает результат настройки нашей темы. 
+Это стало возможным благодаря настройке HTML HEX-кода внутри .streamlit/config.toml файла.
+https://docs.streamlit.io/develop/concepts/configuration/theming
+
+
+st.secrets позволяет хранить конфиденциальную информацию, такую как ключи API,
+пароли к базам данных или другие учетные данные.
+Если вы работаете локально, их можно хранить в .streamlit/secrets.toml, но не загружайте 
+его в репозиторий GitHub при развертывании приложения.
+пример
+https://docs.streamlit.io/develop/concepts/connections/secrets-management
+
+st.file_uploader отображает виджет загрузки файлов
+https://docs.streamlit.io/develop/api-reference/widgets/st.file_uploader
+глянуть очень интересно
+https://docs.streamlit.io/develop/api-reference/configuration/config.toml#set-configuration-options
+https://docs.streamlit.io/develop
+
+st.set_page_config(layout="wide") – отображает содержимое приложения в расширенном режиме (в противном случае по умолчанию содержимое заключено в поле фиксированной ширины).
+st.sidebar – размещает виджеты или текст/изображения на боковой панели.
+st.expander – размещает дисплеи с текстом/изображением внутри складной коробки-контейнера.
+st.columns – создает табличное пространство (или столбец), внутри которого может быть размещено содержание.
+
+st.progress отображает индикатор выполнения, который графически обновляется по мере выполнения итерации.
+https://docs.streamlit.io/develop/api-reference/status/st.progress
+
+st.form создает форму, которая объединяет элементы вместе с кнопкой "Отправить".
+https://docs.streamlit.io/develop/api-reference/execution-flow/st.form
+
+st.experimental_get_query_params позволяет извлекать параметры запроса непосредственно из URL-адреса браузера пользователя.
+https://docs.streamlit.io/develop/api-reference/caching-and-state/st.experimental_get_query_params
+
+st.cache позволяет оптимизировать производительность вашего приложения Streamlit.
+https://docs.streamlit.io/develop/api-reference/caching-and-state/st.cache_data
+https://docs.streamlit.io/develop/concepts/architecture/caching
+https://docs.streamlit.io/develop/api-reference/caching-and-state/st.cache_resource
+
+
+
+st.session_state
+Session State—это способ обмена переменными между повторами для каждого session
+https://30days.streamlit.app/?challenge=Day25
+https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state
+https://docs.streamlit.io/develop/concepts/architecture/session-state
+
+Как использовать API при создании приложения Bored API
+https://30days.streamlit.app/?challenge=Day26
+https://www.boredapi.com/
+
+Перетаскиваемая панель инструментов с изменяемым размером с помощью Streamlit Elements
+pip install streamlit-elements==0.1.*
+https://30days.streamlit.app/?challenge=Day27
+Подробное руководство по использованию можно найти
+https://github.com/okld/streamlit-elements#getting-started
+
+streamlit-shap —это компонент Streamlit, предоставляющий оболочку для отображения графиков SHAP в Streamlit
+https://30days.streamlit.app/?challenge=Day28
+
+Извлекает и отображает тамбнейл из видео YouTube
+https://30days.streamlit.app/?challenge=Day30
+
+
+
+
+
+
+
+
